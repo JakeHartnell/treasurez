@@ -1,11 +1,6 @@
-var SecretBallot = artifacts.require("SecretBallot");
+var TreasureHunt = artifacts.require("TreasureHunt");
 module.exports = function(deployer) {
-    deployer.deploy(SecretBallot, [
-        web3.utils.fromAscii('John'),
-        web3.utils.fromAscii('Jeff'),
-        web3.utils.fromAscii('Jim'),
-    ],
-    {
-        oasis: { confidential: true }
-    });
+  deployer.deploy(TreasureHunt, "i like dogs", {
+    oasis: { confidential: true }
+  });
 };

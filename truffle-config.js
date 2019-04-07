@@ -1,12 +1,16 @@
 const HDWalletProvider = require("truffle-hdwallet-provider");
 
 // add your mnemonic here
-const MNEMONIC = "<private key mnemonic>"
+const MNEMONIC =
+  "battle bench guard balance kiss mushroom hybrid zone afraid industry point source";
 
 module.exports = {
   networks: {
     oasis: {
-      provider: function () {
+      provider: function() {
+        // console.log(
+        //   new HDWalletProvider(MNEMONIC, "https://web3.oasiscloud.io")
+        // );
         return new HDWalletProvider(MNEMONIC, "https://web3.oasiscloud.io");
       },
       network_id: "42261",
@@ -16,9 +20,11 @@ module.exports = {
   compilers: {
     external: {
       command: "./node_modules/.bin/oasis-compile",
-      targets: [{
-        path: "./.oasis-build/*.json",
-      }]
+      targets: [
+        {
+          path: "./.oasis-build/*.json"
+        }
+      ]
     }
   }
 };
